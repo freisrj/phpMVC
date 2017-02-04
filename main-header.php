@@ -222,8 +222,8 @@
                     <!--<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
               	    <img src="<?php echo MAINURL.$_SESSION ['Imagem_path'];?>" class="img-circle" alt="User Image">
                     <p>
-                    	<?php echo $_SESSION ['Nome'].' - '.$_SESSION ['Nome_nivel_acesso'];?>
-                    	<small>Membro desde <?php echo $_SESSION ['Created']; ?></small>
+                    	<?php echo $_SESSION ['Nome'];?>
+                    	<small><?php echo $_SESSION ['Funcao']; ?></small>
                     </p>
                   </li>
                   <!-- Menu Body 

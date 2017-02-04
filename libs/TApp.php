@@ -25,7 +25,7 @@ Class TApp{
                     $strTo.= strtoupper(substr($value,0,1)) . substr($value,1);
                 }
                 $this->to = $strTo;
-                //echo $strTo . '<br />';
+                //echo 'to='.$strTo . '<br />';
             }
             if(isset($arr[1])){
                 $mt = strtolower($arr[1]);
@@ -39,14 +39,14 @@ Class TApp{
                     }
                 }
                 $this->method = $strMt;
-                //echo $strMt . '<br />';
+                //echo 'method='.$strMt . '<br />';
             }
             unset($arr[0]);
             unset($arr[1]);
             $this->params = $arr;
         } else {
-            $this->to = "home";
-            $this->method = "principal";
+            $this->to = "ControleLogin";
+            $this->method = "login";
             $this->params = null;
         }
     }
@@ -71,7 +71,7 @@ Class TApp{
             }
             
         }
-        //return exp[lode("/", filter_var(rtrim($url), FILTER_SANITIZE_URL));
+        //return explode("/", filter_var(rtrim($url), FILTER_SANITIZE_URL));
     }
 
 }

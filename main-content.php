@@ -7,7 +7,7 @@
           </h1>
 
         <ol class="breadcrumb">
-            <li><a href="/phpMVC/main2.php"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="controle-login/principal"><i class="fa fa-dashboard"></i> Home</a></li>
             <!--<li class="active">Dashboard</li>-->
         </ol>
 

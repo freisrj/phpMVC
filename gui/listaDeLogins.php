@@ -3,15 +3,12 @@
 //session_start();
 //include_once("/phpMVC/seguranca.php");
 
-$id_usuario     = '';
-$nome_usuario   = '';
-$email          = '';
-$login          = '';
-$senha          = '';
-$imagem_path    = '';
-$status         = '';
-$created        = '';
-$modified       = '';
+$id         = '';
+$id_fun     = '';
+$login      = '';
+$senha      = '';
+$acesso     = '';
+$unidade    = '';
 ?>
 
 <head>
@@ -31,31 +28,25 @@ $modified       = '';
 </head>
 
 <div id="formulario">
-<form method"post" action="<?php echo MAINURL;?>controle-usuario/salvar">
+<form method"post" action="<?php echo MAINURL;?>controle-funcionario/salvar">
     <label>Id</label>
-    <input type="text" readonly="true" name="txtIdUsuario" value=""><br /> 
-    <label>Nome</label>
-    <input type="text" readonly="false" name="txtNomeUsuario" value="<?php echo $nome_usuario;?>"><br /> 
-    <label>Email</label>
-    <input type="text" readonly="false" name="txtEmail" value="<?php echo $email;?>"><br /> 
+    <input type="text" readonly="true" name="txtId" value=""><br /> 
+    <label>Id Fun</label>
+    <input type="text" readonly="false" name="txtIdFun" value="<?php echo $id_fun;?>"><br /> 
     <label>Login</label>
     <input type="text" readonly="false" name="txtLogin" value="<?php echo $login;?>"><br /> 
     <label>Senha</label>
     <input type="password" readonly="false" name="txtSenha" value="<?php echo $senha;?>"><br /> 
-    <label>Imagem</label>
-    <input type="text" readonly="false" name="txtImagem" value="<?php echo $imagem_path;?>"><br /> 
-    <label>Status</label>
-    <input type="text" readonly="true" name="txtStatus" value="<?php echo $status;?>"><br /> 
-    <label>Criado em</label>
-    <input type="text" readonly="true" name="txtCreated" value="<?php echo $created;?>"><br /> 
-    <label>Última modificação em</label>
-    <input type="text" readonly="true" name="txtModified" value="<?php echo $modified;?>"><br /> 
+    <label>Acesso</label>
+    <input type="text" readonly="false" name="txtAcesso" value="<?php echo $acesso;?>"><br /> 
+    <label>Unidade</label>
+    <input type="text" readonly="true" name="txtUnidade" value="<?php echo $unidade;?>"><br /> 
     
     <!--
-    <input type="button" action='executaAcao(<?php echo MAINURL?>controle-usuario/listar/)' value="Pesquisar">
-    <input type="submit" action='executaAcao(<?php echo MAINURL?>controle-usuario/novo/)' value="Novo">
+    <input type="button" action='executaAcao(<?php echo MAINURL?>controle-funcionario/listar/)' value="Pesquisar">
+    <input type="submit" action='executaAcao(<?php echo MAINURL?>controle-funcionario/novo/)' value="Novo">
     -->
-    <a href='<?php echo MAINURL?>controle-usuario/novo/'>Novo</a>
+    <a href='<?php echo MAINURL?>controle-login/novo/'>Novo</a>
 
 </form>
 </div>
@@ -126,10 +117,10 @@ $modified       = '';
                 echo '<td>' . $modified . '</td>';
 
                 echo "<td>";
-                echo "<a href='" . MAINURL . "controle-usuario/excluir/" . $id_usuario . "/'>Excluir</a>&nbsp;";
-                echo "<a href='" . MAINURL . "controle-usuario/editar/" . $id_usuario . "/'>Editar</a>";
-                //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-usuario/excluir/" . $id_usuario . "/)' value='Excluir'>";
-                //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-usuario/editar/" . $id_usuario . "/)' value='Editar'>";
+                echo "<a href='" . MAINURL . "controle-funcionario/excluir/" . $id_usuario . "/'>Excluir</a>&nbsp;";
+                echo "<a href='" . MAINURL . "controle-funcionario/editar/" . $id_usuario . "/'>Editar</a>";
+                //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-funcionario/excluir/" . $id_usuario . "/)' value='Excluir'>";
+                //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-funcionario/editar/" . $id_usuario . "/)' value='Editar'>";
                 echo "</td>";
                 echo '</tr>';
             }
@@ -184,37 +175,33 @@ $modified       = '';
                     <form class="form-horizontal">
 
                         <div class="form-group">
-                            <label for="inputName" class="col-sm-2 control-label">Nome</label>
-                            <div class="col-sm-4">
-                                <input type="text" class="form-control" id="inputName" placeholder="Nome">
-                            </div>
-                            <label for="inputEmail" class="col-sm-2 control-label">E-mail</label>
-                            <div class="col-sm-4">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <label for="inputIdFun" class="col-sm-2 control-label">Funcionário</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="inputIdFun" placeholder="Funcionário">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputUsuario" class="col-sm-2 control-label">Usuário</label>
+                            <label for="inputLogin" class="col-sm-2 control-label">Login</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Usuário">
+                                <input type="text" class="form-control" id="inputLogin" placeholder="Login">
                             </div>
                             <label for="inputSenha" class="col-sm-2 control-label">Senha</label>
                             <div class="col-sm-4">
-                                <input type="password" class="form-control" id="inputEmail" placeholder="Senha">
+                                <input type="password" class="form-control" id="inputSenha" placeholder="Senha">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputConfirmeSenha" class="col-sm-2 control-label">Confirme a Senha</label>
                             <div class="col-sm-4">
-                                <input type="password" class="form-control" id="inputEmail" placeholder="Confirme novamente a Senha">
+                                <input type="password" class="form-control" id="inputConfirmeSenha" placeholder="Confirme novamente a Senha">
                             </div>
-                            <label for="inputNivelAcesso" class="col-sm-2 control-label">Nível de acesso</label>
+                            <label for="inputAcesso" class="col-sm-2 control-label">Nível de acesso</label>
                             <div class="col-sm-4">
-                                <select class="form-control">
-                                    <option>1 - Administrador</option>
-                                    <option>2 - Usuário</option>
+                                <select class="form-control" id="inputAcesso">
+                                    <option value="1">1 - Administrador</option>
+                                    <option value="2">2 - Usuário</option>
                                 </select>
                             </div>
                         </div>
@@ -298,47 +285,38 @@ $modified       = '';
 
                                     if ($aUsu) {
 
-                                        foreach($aUsu as $usuario) {
+                                        foreach($aLog as $login) {
 
-                                            $usuario instanceof Usuario;
+                                            $login instanceof Login;
 
-                                            $id_usuario     = '';
-                                            $nome_usuario   = '';
-                                            $email          = '';
-                                            $login          = '';
-                                            //$senha          = '';
-                                            $imagem_path    = '';
-                                            $status         = '';
-                                            $created        = '';
-                                            $modified       = '';
+                                            $id      = '';
+                                            $id_fun  = '';
+                                            $login   = '';
+                                            $senha   = '';
+                                            $acesso  = '';
+                                            $unidade = '';
 
-                                            if ($usuario){
-                                                $id_usuario     = $usuario->getIdUsuario();
-                                                $nome_usuario   = $usuario->getNomeUsuario();
-                                                $email          = $usuario->getEmail();
-                                                $login          = $usuario->getLogin();
-                                                //$senha          = $usuario->getSenha();
-                                                $imagem_path    = $usuario->getImagemPath();
-                                                $status         = $usuario->getStatus();
-                                                $created        = $usuario->getCreated(true);
-                                                $modified       = $usuario->getModified(true);
+                                            if ($login){
+                                                $id      = $login->getId();
+                                                $id_fun  = $login->getIdFun();
+                                                $login   = $login->getLogin();
+                                                $senha   = $login->getSenha();
+                                                $acesso  = $login->getAcesso();
+                                                $unidade = $login->getUnidade();
                                             } 
                                             echo '<tr>';
-                                            echo '<td>' . $id_usuario . '</td>';
-                                            echo '<td>' . $nome_usuario . '</td>';
-                                            echo '<td>' . $email . '</td>';
+                                            echo '<td>' . $id . '</td>';
+                                            echo '<td>' . $id_fun . '</td>';
                                             echo '<td>' . $login . '</td>';
-                                            //echo '<td>' . $senha . '</td>';
-                                            echo '<td>' . $imagem_path . '</td>';
-                                            echo '<td>' . $status . '</td>';
-                                            echo '<td>' . $created . '</td>';
-                                            echo '<td>' . $modified . '</td>';
+                                            echo '<td>' . $senha . '</td>';
+                                            echo '<td>' . $acesso . '</td>';
+                                            echo '<td>' . $unidade . '</td>';
 
                                             echo "<td>";
-                                            echo "<a href='" . MAINURL . "controle-usuario/excluir/" . $id_usuario . "/'>Excluir</a>&nbsp;";
-                                            echo "<a href='" . MAINURL . "controle-usuario/editar/" . $id_usuario . "/'>Editar</a>";
-                                            //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-usuario/excluir/" . $id_usuario . "/)' value='Excluir'>";
-                                            //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-usuario/editar/" . $id_usuario . "/)' value='Editar'>";
+                                            echo "<a href='" . MAINURL . "controle-funcionario/excluir/" . $id_usuario . "/'>Excluir</a>&nbsp;";
+                                            echo "<a href='" . MAINURL . "controle-funcionario/editar/" . $id_usuario . "/'>Editar</a>";
+                                            //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-funcionario/excluir/" . $id_usuario . "/)' value='Excluir'>";
+                                            //echo "<input type='button' action='executaAcao(" . MAINURL . "controle-funcionario/editar/" . $id_usuario . "/)' value='Editar'>";
                                             echo "</td>";
                                             echo '</tr>';
                                         }
@@ -348,13 +326,11 @@ $modified       = '';
                         <tfoot>
                             <tr>
                                 <th rowspan="1" colspan="1">Id</th>
-                                <th rowspan="1" colspan="1">Nome</th>
-                                <th rowspan="1" colspan="1">E-mail</th>
-                                <th rowspan="1" colspan="1">Usuário</th>
-                                <th rowspan="1" colspan="1">Imagem</th>
-                                <th rowspan="1" colspan="1">Status</th>
-                                <th rowspan="1" colspan="1">Criado em</th>
-                                <th rowspan="1" colspan="1">Alterado em</th>
+                                <th rowspan="1" colspan="1">Funcionario</th>
+                                <th rowspan="1" colspan="1">Login</th>
+                                <th rowspan="1" colspan="1">Senha</th>
+                                <th rowspan="1" colspan="1">Acesso</th>
+                                <th rowspan="1" colspan="1">Unidade</th>
                                 <th rowspan="1" colspan="1">Ações</th>
                             </tr>
                         </tfoot>

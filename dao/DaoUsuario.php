@@ -77,7 +77,7 @@ class DaoUsuario implements IDao{
     }
 
     public function listarTodos() {
-        $sql = "SELECT id_usuario, nome_usuario, email, login, senha, imagem_path, status, created, modified FROM adm_usuario";
+        $sql = "SELECT id_usuario, nome_usuario, email, login, senha, imagem_path, status, created, modified FROM funcionarios";
         $conexao = Conexao::getConexao();
         $sth = $conexao->prepare($sql);
         try {

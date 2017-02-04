@@ -1,17 +1,22 @@
 <?php
 //require_once "libs/Conexao.php";
 
-class Usuario { //extends Conexao{
+
+class Funcionario extends Conexao{
     
-    private $id_usuario;
-	private $nome_usuario;
-    private $email;
-    private $login;
-    private $senha;
+    private $id_fun;
+	private $nome;
+    private $apelido;
+    private $telefone;
+    private $celular;
+	private $funcao;
+	private $endereco; 
+	private $bairro;
+    private $cidade;
+    private $cep;
+    private $uf;
+    private $imagem;
     private $imagem_path;
-	private $status;
-	private $created; 
-	private $modified;
     
     // Padrao camelCase
     public function __construct() {
