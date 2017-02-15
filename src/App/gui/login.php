@@ -10,9 +10,9 @@
     <!-- Bootstrap 3.3.5 -->
     <link rel="stylesheet" href="<?php echo MAINURL;?>bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?php echo MAINURL;?>bootstrap/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?php echo MAINURL;?>dist/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo MAINURL;?>dist/css/AdminLTE.min.css">
     <!-- iCheck -->
@@ -27,12 +27,9 @@
   </head>
   <body class="hold-transition login-page">
     <div class="login-box">
-
       <div class="login-logo">
-        <!--<b>Área administrativa</b>-->
-        <img src="<?php echo MAINURL; ?>img/nlogocomp.png" style="width: 360px">
+        <b>Área administrativa</b>
       </div><!-- /.login-logo -->
-
       <div class="login-box-body">
         <p class="login-box-msg">Entre com usuário e senha para iniciar.</p>
         
@@ -89,9 +86,8 @@
 
 		<!-- /.social-auth-links -->
 		
-        
-        <!--<a href="#">Não lembro minha senha</a><br>
-        <a href="register.html" class="text-center">Cadastre-se</a>-->
+        <a href="#">Não lembro minha senha</a><br>
+<!--        <a href="register.html" class="text-center">Cadastre-se</a>-->
 
 
       </div><!-- /.login-box-body -->

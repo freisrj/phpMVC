@@ -56,13 +56,12 @@
       <!--Fim Rodapé-->
 
       <!-- Inicio Control Sidebar 
-       include_once("principal-control-sidebar.php"); 
-      Fim Control Sidebar 
+      <?php include_once("principal-control-sidebar.php"); ?>
+      Fim Control Sidebar -->
 
       <!-- Add the sidebar's background. This div must be placed
-           immediately after the control sidebar 
+           immediately after the control sidebar -->
       <div class="control-sidebar-bg"></div>
-      -->
 
     </div><!-- ./wrapper -->
 

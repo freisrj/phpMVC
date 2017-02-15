@@ -1,4 +1,5 @@
 <?php
+
 $id_fun     = "";
 $nome       = "";
 $apelido    = "";
@@ -12,6 +13,27 @@ $cep        = "";
 $uf         = "";
 $imagem     = "";
 $imagem_path = "";
+
+
+// $f = $this->getDados("funcionario");
+// //echo print_r($funcionario);
+
+// if ($f){
+//     $f instanceof Login;
+//     $id_fun     = $f->getIdFun();
+//     $nome       = $f->getNome();
+//     $apelido    = $f->getApelido();
+//     $telefone   = $f->getTelefone();
+//     $celular    = $f->getCelular();
+//     $funcao     = $f->getFuncao();
+//     $endereco   = $f->getEndereco();
+//     $bairro     = $f->getBairro();
+//     $cidade     = $f->getCidade();
+//     $cep        = $f->getCep();
+//     $uf         = $f->getUf();
+//     $imagem     = $f->getImagem();
+//     $imagem_path = $f->getImagemPath();
+// }
 ?> 
 
 <!-- Content Header (Page header) -->
@@ -181,20 +203,18 @@ $imagem_path = "";
                             </tr>
                         </thead>
                         <tbody>
-                            <tr role='row' class='odd'>"<td></td></tr>
+
                              <?php
                                 // cria objeto de dados de usuário
-                                //$df = new DaoFuncionario();
+                                $df = new DaoFuncionario();
                                 // Lista todos os registros de usuário
-                                //$aFun = $df->listarTodos();
+                                $aFun = $df->listarTodos();
 
                                 // como o método listar usuários já foi chamado basta pegar o resultado da lista e colocar em um objeto
                                 //$aFun = $this->getDados("funcionarios");
-                                //echo print_r($aFun);
+                                //echo print_r($aLog);
 
 
-                                /*
-                                //if (count($aFun)>0) {
                                 if ($aFun) {
 
                                     foreach($aFun as $funcionario) {
@@ -228,7 +248,6 @@ $imagem_path = "";
                                         echo "</tr>";
                                     }
                                 }
-                                */
                                 ?>
                         </tbody>
                     </table>

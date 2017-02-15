@@ -21,12 +21,11 @@ error_reporting(E_ALL);
 function __autoload($c) {
     $diretorios = array (
         './',
-        './to/',
-        './model/',
-        './interfaces/',
-        './libs/',
-        './gui/',
-        './dao/'
+        './app/',
+        './app/dao/',
+        './app/interfaces/',
+        './app/model/',
+        './app/to/'
     );
     
     foreach($diretorios as $dir){
@@ -38,6 +37,13 @@ function __autoload($c) {
         }
     }
 }
+
+
+/**
+ * Método "moderno" para carregamento automático de classes via COMPOSER (composer.json)
+*/ 
+//require 'vendor/autoload.php';
+
 
 $t = new TApp();
 $t->executar();

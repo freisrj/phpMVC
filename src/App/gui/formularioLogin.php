@@ -1,12 +1,13 @@
 <?php
 
-$id      = "";
-$login   = "";
-$nome    = "";
-$acesso  = "";
-$unidade = "";
+// cria objeto de dados de usuário
+//$dl = new DaoLogin();
+// Lista todos os registros de usuário
+//$aLog = $dl->listarTodos();
+//echo print_r($aLog[0]);
+//var_dump($aLogin);
 
-?> 
+?>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -166,16 +167,6 @@ $unidade = "";
                         <tbody>
                             <tr role='row' class='odd'>"<td></td></tr>
                              <?php
-
-                                // cria objeto de dados de usuário
-                                //$dl = new DaoLogin();
-                                // Lista todos os registros de usuário
-                                //$aLog = $dl->listarTodos();
-
-                                // como o método listar usuários já foi chamado basta pegar o resultado da lista e colocar em um objeto
-                                //$aLog = $this->getDados("logins");
-                                //echo print_r($aLog);
-
 
                                 //if (count($aLog)>0) {
                                 // //if ($aLog) {
